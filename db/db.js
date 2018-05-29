@@ -16,7 +16,7 @@ var DB = function() {
 		    TableName: 'Image',
 		    Item: {
 		        "Id": {
-		        	S: 'aa.png'
+		        	S: 'dsadsad'
 		        }
 		    }
 		};

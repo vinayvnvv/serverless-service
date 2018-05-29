@@ -57,14 +57,45 @@ provider:
 functions:
   hello:
     handler: handler.hello
+    events:
+     - http:
+         path: users/create
+         method: get
   add:
     handler: handler.add
+    events:
+     - http:
+         path: users/add
+         method: get
   get:
     handler: handler.get
+    events:
+     - http:
+         path: users/get
+         method: get
+  checkinputfolder:
+    handler: handler.checkInputFolder
+    events:
+     - http:
+         path: settings/checkInputFolder
+         method: post
+  checkoutputfolder:
+    handler: handler.checkOutputFolder
+    events:
+     - http:
+         path: settings/checkOutputFolder
+         method: post
+  getProcessPath:
+    handler: handler.getProcessPath
+    events:
+     - http:
+         path: process_path
+         method: get
 
 
 plugins:
   - serverless-dynamodb-local
+  - serverless-offline
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
